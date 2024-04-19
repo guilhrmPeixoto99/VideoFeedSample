@@ -1,10 +1,10 @@
 import Foundation
 
 struct ListingResponse: Decodable, Equatable {
-    let looks: [Item]
+    let looks: [ListingItem]
 }
 
-struct Item: Decodable, Identifiable, Equatable {
+struct ListingItem: Decodable, Identifiable, Equatable {
 
     // MARK: - Properties
 
@@ -14,6 +14,9 @@ struct Item: Decodable, Identifiable, Equatable {
     let profilePicture: URL?
     let username: String
     let video: URL?
+
+    var likeCount = 0
+    var fireCount = 0
 
     // MARK: - CodingKeys
 
